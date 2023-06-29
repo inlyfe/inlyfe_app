@@ -1,0 +1,116 @@
+{% extends 'main_app/app.html' %}
+{% block page %} Console {% endblock page %}
+{% block title %} My console, lists, snd statistics {% endblock title %}
+{% block content %}
+<section>
+    
+    <section class="progress-section">
+        <div class="container">
+            <div class="card">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3>{{total_visitors}}<span></span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>Visitors</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <div></div>
+                    <div class="percent">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="number">
+                            <h3>{{visitor_by_total}}<span></span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>Most visited Purpose</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+   
+
+  </section>
+<section class="financial">
+    <h2>Financial</h2>
+    <div class="grid">
+      <ul>
+        <li>104</li>
+        <li>102</li>
+        <li>100</li>
+        <li>98</li>
+      </ul>
+    </div>
+  </section>
+ 
+  <section class="visitor-list">
+    <div class="head">
+      <h2>Recently visited</h2>
+      <h4>All</h4>
+    </div>
+    <ul>
+        
+      <li>
+        <span>Date</span>
+        <span>In time</span>
+        <span>Gender</span>
+        <span>Purpose</span>
+        <span>Office</span>
+        <span>phone</span>
+      </li>
+      {% for visitor in visitors %}
+      <li>
+        <span>{{visitor.date_visited}}</span>
+        <span>{{visitor.in_time}}</span>
+        <span>{{visitor.gender}}</span>
+        <span>{{visitor.purpose}}</span>
+        <span>{{visitor.office_visited}}</span>
+        {% if visitor.phone %}
+        <span>{{ visitor.phone }}</span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section class="profits">
+    <div class="head">
+      <h2>Recently visited</h2>
+      <svg id="icon-update" viewBox="0 0 24 24">
+  <path d="M12.516 8.016v4.219l3.469 2.109-0.703 1.219-4.266-2.578v-4.969h1.5zM21 10.125h-6.797l2.766-2.813q-2.063-2.063-4.945-2.086t-4.945 1.992q-0.844 0.844-1.453 2.273t-0.609 2.602 0.609 2.602 1.453 2.273 2.297 1.453 2.625 0.609 2.648-0.609 2.32-1.453q2.016-2.016 2.016-4.875h2.016q0 3.703-2.625 6.281-2.625 2.625-6.375 2.625t-6.375-2.625q-2.625-2.578-2.625-6.258t2.625-6.305q1.078-1.078 2.93-1.852t3.398-0.773 3.398 0.773 2.93 1.852l2.719-2.813v7.125z"></path>
+  </svg>
+    </div>
+    <ul>
+        {% for visitor in visitors %}
+      <li>
+        <div>
+          <h4>{{ visitor.first_name }} {{visitor.middle_name}} {{visitor.last_name}}</h4>
+          <time>{{visitor.in_time}}</time>
+        </div>
+        <output>0.00000233 $</output>
+      </li>
+      {% endfor %}
+      
+     
+    </ul>
+  </section>
+
+{% endblock %}
+
+
+{% block script %}
+ <script></script>
+{% endblock %}

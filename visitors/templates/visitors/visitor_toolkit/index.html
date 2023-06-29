@@ -1,0 +1,70 @@
+{% extends 'visitors/app/index.html' %}
+
+{% block content %}
+
+<div class="toolkit-wraper">
+    <a href="{% url 'visitor_check' %}" class="toolkit-card">
+       <div class="card-body">
+           <div class="card-wraper">
+               <div class="card-icon">
+                   check icon
+               </div>
+               <div class="card-text">
+                   <p>Verify visitor</p>
+               </div>
+           </div>
+       
+       </div>
+   </a>
+
+    <a href="{% url 'create_citizen' %}" class="toolkit-card">
+       <div class="card-body">
+           <div class="card-wraper">
+               <div class="card-icon">
+                   add icon
+               </div>
+               <div class="card-text">
+                   <p>register visitor</p>
+               </div>
+           </div>
+       
+       </div>
+   </a>
+
+
+    <a href="{% url 'visitor_list' %}" class="toolkit-card">
+       <div class="card-body">
+           <div class="card-wraper">
+               <div class="card-icon">
+                   List icon
+               </div>
+               <div class="card-text">
+                   <p>Visitor List</p>
+               </div>
+           </div>
+       
+       </div>
+   </a>
+
+   
+       <a href="#" class="toolkit-card">
+           <div class="card-body">
+               <div class="card-wraper">
+                   <div class="card-icon">
+                       check icon
+                   </div>
+                   <div class="card-text">
+                       <p>offices & statistics</p>
+                   </div>
+               </div>
+           
+           </div>
+       </a>
+ 
+    
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'main_app/app.html' %}
+
+{% block page %} Console {% endblock page %}
+{% block title %} My visitor verification flow chart {% endblock title %}
+
+{% block content %}
+{% if is_office_visited %}
+office visited
+{% else %}
+{% if response %}
+        {% if response == "we can't find a visitor" %}
+        <div class="check-card showCheckCard">
+            <a href="">{{response}}</a>
+        </div>
+        {% else %}
+       
+        <div class="check-resp-card showCheckCard">
+            <div class="check-resp-form-card">
+                <form action="{% url 'office_visited_screen' %}" method="post">
+                    {% csrf_token %}
+                    <div class="grid">
+                        <div class="check-resp">
+                            {% if response.image %}
+                            <div class="visitor_img_resp">
+                                <img src="{{response.image.url}}" alt="" class="visitor_image">
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="check-resp">
+                            <label for="" class="control-label">First Name</label>
+                            <input type="text" readonly required name="first_name" class="form-control" value="{{response.FirstName}}">
+                        </div>
+                        <div class="check-resp">
+                            <label for="" class="control-label">Middle Name</label>
+                            <input type="text" readonly required name="middle_name" class="form-control" value="{{response.MiddleName}}">
+                        </div>
+                    </div>
+                   <div class="grid">
+                        <div class="check-resp">
+                            <label for="" class="control-label">Last Name</label>
+                            <input type="text" readonly required name="last_name" class="form-control" value="{{response.LastName}}">
+                        </div>
+                        <div class="check-resp">
+                            <label for="" class="control-label">Gender</label>
+                            <input type="text" readonly required name="gender" class="form-control" value="{{response.Sex}}">
+                            <input type="text" readonly hidden required name="id_number" class="form-control" value="{{response.id_number}}">
+                        </div>
+                   </div>
+
+                   <div class="check-resp">
+                    <button type="submit" class="btn">Verify</button>
+                   </div>
+                    
+                </form>
+            </div>
+        </div>
+        {% endif %}
+        {% else %}
+        <div class="check-wraper">
+            <div class="check-card showCheckCard">
+                <div class="form-card">
+                    <form action="{% url 'visitor_check' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <!-- <label for="" class="control-label">Id Number</label> -->
+                            <input type="text" required name="id_number" class="form-control" id="idInput" placeholder="Enter visitor id">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-checkBtn" type="submit">Check</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+        {% endif %}
+        
+      
+       
+
+{% endblock %}
+
+
+{% block script %}
+ <script></script>
+{% endblock %}

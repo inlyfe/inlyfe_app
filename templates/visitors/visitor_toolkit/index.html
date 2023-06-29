@@ -1,0 +1,125 @@
+{% extends 'main_app/app.html' %}
+{% block page %} Console {% endblock page %}
+{% block title %} My visitor toolkits {% endblock title %}
+
+{% block content %}
+    <div class="toolkit-wraper">
+        <!-- <div class="clear-fix"></div> -->
+       <div class="container-toolkit">
+        <!-- toolkit card flex box -->
+        <a href="{% url 'visitor_check' %}" class="toolkit-card">
+            <div class="toolkit-box">
+                <svg id="icon-add" viewBox="0 0 24 24">
+                    <path d="M13.031 13.031h8.953q-0.328 3.563-2.859 6.094t-6.094 2.859v-8.953zM13.031 2.016q3.563 0.328 6.094 2.859t2.859 6.094h-8.953v-8.953zM11.016 2.016v19.969q-3.797-0.375-6.398-3.234t-2.602-6.75 2.602-6.75 6.398-3.234z"></path>
+                </svg>
+            </div>
+            <div class="toolkit-text">
+                check visitor
+            </div>
+        </a>
+
+        <a href="{% url 'add' %}" class="toolkit-card">
+            <div class="toolkit-box">
+                <svg id="icon-add" viewBox="0 0 24 24">
+                    <path d="M13.031 13.031h8.953q-0.328 3.563-2.859 6.094t-6.094 2.859v-8.953zM13.031 2.016q3.563 0.328 6.094 2.859t2.859 6.094h-8.953v-8.953zM11.016 2.016v19.969q-3.797-0.375-6.398-3.234t-2.602-6.75 2.602-6.75 6.398-3.234z"></path>
+                </svg>
+            </div>
+            <div class="toolkit-text">
+                register new visitor
+            </div>
+        </a>
+
+        <a href="{% url 'visitor_list' %}" class="toolkit-card">
+            <div class="toolkit-box">
+                <svg id="icon-add" viewBox="0 0 24 24">
+                    <path d="M13.031 13.031h8.953q-0.328 3.563-2.859 6.094t-6.094 2.859v-8.953zM13.031 2.016q3.563 0.328 6.094 2.859t2.859 6.094h-8.953v-8.953zM11.016 2.016v19.969q-3.797-0.375-6.398-3.234t-2.602-6.75 2.602-6.75 6.398-3.234z"></path>
+                </svg>
+            </div>
+            <div class="toolkit-text">
+                visitors
+            </div>
+        </a>
+
+        <a href="{% url 'visitor_list' %}" class="toolkit-card">
+            <div class="toolkit-box">
+                <svg id="icon-add" viewBox="0 0 24 24">
+                    <path d="M13.031 13.031h8.953q-0.328 3.563-2.859 6.094t-6.094 2.859v-8.953zM13.031 2.016q3.563 0.328 6.094 2.859t2.859 6.094h-8.953v-8.953zM11.016 2.016v19.969q-3.797-0.375-6.398-3.234t-2.602-6.75 2.602-6.75 6.398-3.234z"></path>
+                </svg>
+            </div>
+            <div class="toolkit-text">
+                visitors
+            </div>
+        </a>
+
+
+        <a href="{% url 'visitor_list' %}" class="toolkit-card">
+            <div class="toolkit-box">
+                <svg id="icon-add" viewBox="0 0 24 24">
+                    <path d="M13.031 13.031h8.953q-0.328 3.563-2.859 6.094t-6.094 2.859v-8.953zM13.031 2.016q3.563 0.328 6.094 2.859t2.859 6.094h-8.953v-8.953zM11.016 2.016v19.969q-3.797-0.375-6.398-3.234t-2.602-6.75 2.602-6.75 6.398-3.234z"></path>
+                </svg>
+            </div>
+            <div class="toolkit-text">
+                office registration
+            </div>
+        </a>
+
+
+        <a href="{% url 'visitor_list' %}" class="toolkit-card">
+            <div class="toolkit-box">
+                <svg id="icon-add" viewBox="0 0 24 24">
+                    <path d="M13.031 13.031h8.953q-0.328 3.563-2.859 6.094t-6.094 2.859v-8.953zM13.031 2.016q3.563 0.328 6.094 2.859t2.859 6.094h-8.953v-8.953zM11.016 2.016v19.969q-3.797-0.375-6.398-3.234t-2.602-6.75 2.602-6.75 6.398-3.234z"></path>
+                </svg>
+            </div>
+            <div class="toolkit-text">
+                add receptionist 
+            </div>
+        </a>
+
+        <a href="{% url 'visitor_list' %}" class="toolkit-card">
+            <div class="toolkit-box">
+                <svg id="icon-add" viewBox="0 0 24 24">
+                    <path d="M13.031 13.031h8.953q-0.328 3.563-2.859 6.094t-6.094 2.859v-8.953zM13.031 2.016q3.563 0.328 6.094 2.859t2.859 6.094h-8.953v-8.953zM11.016 2.016v19.969q-3.797-0.375-6.398-3.234t-2.602-6.75 2.602-6.75 6.398-3.234z"></path>
+                </svg>
+            </div>
+            <div class="toolkit-text">
+                vendor / mecharnt
+            </div>
+        </a>
+
+        <a href="{% url 'visitor_list' %}" class="toolkit-card">
+            <div class="toolkit-box">
+                <svg id="icon-add" viewBox="0 0 24 24">
+                    <path d="M13.031 13.031h8.953q-0.328 3.563-2.859 6.094t-6.094 2.859v-8.953zM13.031 2.016q3.563 0.328 6.094 2.859t2.859 6.094h-8.953v-8.953zM11.016 2.016v19.969q-3.797-0.375-6.398-3.234t-2.602-6.75 2.602-6.75 6.398-3.234z"></path>
+                </svg>
+            </div>
+            <div class="toolkit-text">
+                receptionist
+            </div>
+        </a>
+
+        <a href="{% url 'visitor_list' %}" class="toolkit-card">
+            <div class="toolkit-box">
+                <svg id="icon-add" viewBox="0 0 24 24">
+                    <path d="M13.031 13.031h8.953q-0.328 3.563-2.859 6.094t-6.094 2.859v-8.953zM13.031 2.016q3.563 0.328 6.094 2.859t2.859 6.094h-8.953v-8.953zM11.016 2.016v19.969q-3.797-0.375-6.398-3.234t-2.602-6.75 2.602-6.75 6.398-3.234z"></path>
+                </svg>
+            </div>
+            <div class="toolkit-text">
+                add merchant/vendor
+            </div>
+        </a>
+
+
+
+
+
+
+       
+
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+ <script></script>
+{% endblock %}

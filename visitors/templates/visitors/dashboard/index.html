@@ -1,0 +1,38 @@
+{% extends 'main_app/app.html' %}
+
+{% block content %}
+
+
+<div class="visitorList">
+    <h1>visitors</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>full name</th>
+                <th>gender</th>
+                <th>phone</th>
+                <th>visited to</th>
+                <th>visited from</th>
+                <th>in time</th>
+                <th>out time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visitor in visitors %}
+            <tr>
+                <td>{{visitor.first_name}} {{visitor.middle_name}} {{visitor.last_name}}</td>
+                <td>{{visitor.gender}}</td>
+                <td>{{visitor.phone}}</td>
+                <td>{{visitor.office_visited}}</td>
+                <td>{{visitor.guest_from}}</td>
+                <td>{{visitor.in_time}}</td>
+                {% if visitor.out_time %}
+                <td>{{visitor.out_time}}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

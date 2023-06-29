@@ -1,0 +1,81 @@
+{% extends 'main_app/app.html' %}
+
+{% block page %} Console {% endblock page %}
+{% block title %} My visitor verification page {% endblock title %}
+
+{% block content %}
+        <div class="check-resp-card showCheckCard">
+            <div class="cehck-resp-form-card">
+                <form action="{% url 'save_visitor' %}" method="post">
+                    {% csrf_token %}
+                    <div class="grid">
+                        <div class="check-resp">
+                            {% if image %}
+                            <div class="visitor_img_resp">
+                                <img src="{{image.image.url}}" alt="" class="visitor_image">
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="check-resp hidden">
+                            <label for="" class="control-label">First Name</label>
+                            <input type="text" readonly required name="first_name" class="form-control" value="{{first_name}}">
+                        </div>
+                        <div class="check-resp hidden">
+                            <label for="" class="control-label">Middle Name</label>
+                            <input type="text" readonly required name="middle_name" class="form-control" value="{{middle_name}}">
+                        </div>
+                    </div>
+                   <div class="grid">
+                        <div class="check-resp hidden">
+                            <label for="" class="control-label">Last Name</label>
+                            <input type="text" readonly required name="last_name" class="form-control" value="{{last_name}}">
+                        </div>
+                        <div class="check-resp hidden">
+                            <label for="" class="control-label">Gender</label>
+                            <input type="text" readonly required name="gender" class="form-control" value="{{gender}}">
+                        </div>
+                   </div>
+                   
+                   <div class="grid">
+                        <div class="verify-visitor-group">
+                            <label for="" class="control-label">Office visited</label>
+                            <select name="office_visited" id="" class="form-control">
+                                <option class="form-control" value="bm production">bm productio</option>
+                             </select>
+                        </div>
+                        <div class="verify-visitor-group">
+                            <label for="" class="control-label">Purpose</label>
+                             <select name="purpose" id="" class="form-control">
+                                <option class="form-control" value="to see feimy">To see feimy</option>
+                             </select>
+                        </div>
+                    </div>
+
+                    <div class="grid">
+                        <div class="verify-visitor-group">
+                            <label for="" class="control-label">From where?</label>
+                            <input type="text" required name="guest_from" class="form-control" value="">
+                        </div>
+                        <div class="verify-visitor-group">
+                            <label for="" class="control-label">Phone</label>
+                            <input type="text" required name="phone" class="form-control" value="">
+                            <input type="file" name="visitor_image" class="form-control">
+                        </div>
+                    </div>
+
+                   <div class="check-resp">
+                    <button type="submit" class="btn">Everything ok</button>
+                   </div>
+                    
+                </form>
+            </div>
+        </div>
+
+{% endblock %}
+
+
+{% block script %}
+ <script></script>
+{% endblock %}

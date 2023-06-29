@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        html {
+        --grid: #1c233b;
+        --radius: 5px;
+        --shadow-1: -10px 15px 10px 2px rgba(0, 0, 0, .3);
+        --shadow-2: -25px 260px 20px 28px rgba(0, 0, 0, .15);
+        display: grid;
+        height: 100%;
+        }
+
+        body {
+            width: 100vh;
+            margin: auto;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #242E4C;
+        }
+        .app{
+            width: 80vw;
+            height: 47vw;
+            border-radius: 3rem;
+            border-left: solid 12px #8a0b40;
+            border-bottom: solid 4px #4c1363;
+            padding: 10px;
+            background: #242E4C;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(-0deg) translateY(-4px);
+        }
+
+        a {
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+
+        .app {
+            overflow: hidden;
+            overflow-y: scroll;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            border-left: 2px solid #232531;
+            border-bottom: 2px solid #232531;
+            background: #455584;
+            transform: translate3d(20px, 220px, 20px);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            height: 30%;
+            overflow: hidden;
+            transform: translate3d(20px, 20px, 20px);
+            object-fit: cover;
+            top: 20vh;
+        }
+
+
+        nav a {
+            flex: 1;
+            display: block;
+            background: transparent;
+            border: 0;
+            border-bottom: solid thin #334266;
+
+            }
+
+
+            nav a:focus {
+            outline-width: thin;
+            }
+            nav a[data-active] {
+            background: #374469;
+            }
+            nav a[data-active] svg {
+            fill: #eee;
+            }
+
+            header, main {
+                width: 75%;
+                margin: 40px auto;
+            }
+            .top {
+                display: flex;
+                flex-direction: column;
+            }
+
+            header .top .top-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .top .top-dec {
+                /* border: solid #010c2b; */
+                padding: 1rem;
+                background: #11214d;
+                border-radius: 1rem;
+            }
+
+            .top .top-dec .top-content {
+                display: flex;
+                /* border: 2px solid #05184e; */
+                padding: 1rem;
+                border-right: 1.4rem;
+                background: #05184e;
+                justify-content: space-between;
+            }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <nav>
+            <a href="">
+                <button>Console</button>
+            </a>
+        
+            <a href="">
+                <button>Visitor Toolkit</button>
+            </a>
+    
+            <a href="">
+                Visitors
+            </a>
+    
+            <a href="">
+                <button>Offices</button>
+            </a>
+      
+        </nav>
+        <header>
+            <div class="top">
+                <div class="top-header">
+                    <div class="date_display">
+                        frid, 20 Jun 2023
+                    </div>
+                    <div class="search"></div>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="" class="link-item">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="top-dec">
+                <div class="top-content">
+
+                    
+                        <div class="visited-today">
+                            <p>visitors today</p>
+                            <h4>1256</h4>
+                        </div>
+    
+                        <div class="visited-today">
+                            <p>visitors today</p>
+                            <h4>1256</h4>
+                        </div>
+    
+                        <div class="visited-today">
+                            <p>visitors today</p>
+                            <h4>1256</h4>
+                        </div>
+    
+                        <div class="visited-today">
+                            <p>visitors today</p>
+                            <h4>1256</h4>
+                        </div>
+    
+                        <div class="visited-today">
+                            <p>visitors today</p>
+                            <h4>1256</h4>
+                        </div>
+    
+                        <div class="visited-today">
+                            <p>visitors today</p>
+                            <h4>1256</h4>
+                        </div>
+    
+                        <div class="visited-today">
+                            <p>visitors today</p>
+                            <h4>1256</h4>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </header>
+        <main>
+            <section>
+               
+                <div class="bottom">
+                    <div class="first-top-card">
+                        <div class="title">
+                            <h2>Statisitcs Overview</h2>
+                        </div>
+                    </div>
+                    <div class="second-top-card">
+                        <div class="statistics-progress">
+
+                        </div>
+                        <div class="statistics-week-day"></div>
+                    </div>
+                    <div class="main-statistics-content-card">
+
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="side-card"></div>
+            </section>
+            <section></section>
+        </main>
+    </div>
+</body>
+</html>

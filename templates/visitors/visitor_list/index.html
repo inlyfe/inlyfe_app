@@ -1,0 +1,42 @@
+{% extends 'main_app/app.html' %}
+{% block page %} Console {% endblock page %}
+{% block title %} My visitors list {% endblock title %}
+{% block content %}
+
+ 
+  <section class="visitor-list">
+    <div class="head">
+      <h2>Visitors</h2>
+      <h4>All</h4>
+    </div>
+    <ul>
+        
+      <li>
+        <span>Date</span>
+        <span>In time</span>
+        <span>Gender</span>
+        <span>Purpose</span>
+        <span>Office</span>
+        <span>phone</span>
+      </li>
+      {% for visitor in visitors %}
+      <li>
+        <span>{{visitor.date_visited}}</span>
+        <span>{{visitor.in_time}}</span>
+        <span>{{visitor.gender}}</span>
+        <span>{{visitor.purpose}}</span>
+        <span>{{visitor.office_visited}}</span>
+        {% if visitor.phone %}
+        <span>{{ visitor.phone }}</span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+{% endblock %}
+
+
+{% block script %}
+ <script></script>
+{% endblock %}
